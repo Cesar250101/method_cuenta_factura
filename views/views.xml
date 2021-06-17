@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <!-- model.name inherit form view -->
+    <record id="method_cuenta_factura.view_partner_property_form" model="ir.ui.view">
+      <field name="name">method.cuenta.factura.view.partner.property.form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="account.view_partner_property_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='property_account_payable_id']" position="after">
+          <field name="actualiza_cuenta" />
+          <field name="cuenta_id" attrs="{'invisible': [('actualiza_cuenta','=',False)]}"/>
+        </xpath>
+        
+      </field>
+    </record>
+  </data>
+</odoo>
