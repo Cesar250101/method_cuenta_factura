@@ -31,9 +31,10 @@ class AccountMove(models.Model):
 class ModuleName(models.Model):
     _inherit = 'res.partner'
 
-    actualiza_cuenta = fields.Boolean(string='Actualiza Cuenta',
+    actualiza_cuenta = fields.Boolean(string='Cuenta y Produto por Defecto',
                                       PlaceHolder='Si se activa esta opción la cuenta seleccionada sera actualizada en las facturas de compras')
-    cuenta_id = fields.Many2one(comodel_name='account.account', string='Cuenta Contable')
+    cuenta_id = fields.Many2one(comodel_name='account.account', string='Cuenta por Defecto')
+    product_id = fields.Many2one(comodel_name='product.product', string='Producto por Defecto')
     
     
     
